@@ -1,0 +1,14 @@
+{
+  "name": "doocs-md-new",
+  "private": true,
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.0"
+  }
+}
