@@ -1,0 +1,9 @@
+- [x] `doocs-md-new` 基础项目创建成功并可顺利执行 `npm run dev` 启动。
+- [x] Tailwind CSS 样式配置成功，在测试组件中能正常生效。
+- [x] 核心工具类 (`utils`, `config`, `types`) 成功迁移且无 TypeScript 编译报错。
+- [x] Zustand 状态管理成功接管，支持配置信息刷新后不丢失（持久化生效）。
+- [x] shadcn-ui 基础组件能够正确渲染，图标正常显示。
+- [x] CodeMirror 编辑器可以正常挂载并高亮 Markdown 语法。
+- [x] Markdown 文本能实时编译为 HTML 并在预览区渲染，包含正常的微信图文行内样式。
+- [x] 左右两侧面板能平滑实现双向同步滚动。
+- [x] 头部功能栏及配置菜单完整，可以正常复制渲染后的内容。

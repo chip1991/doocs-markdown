@@ -43,8 +43,8 @@ async function prePost() {
       title: [1, 2, 3, 4, 5, 6]
         .map(h => document.querySelector(`#output h${h}`)!)
         .filter(h => h)[0]
-        .textContent ?? ``,
-      desc: document.querySelector(`#output p`)!.textContent ?? ``,
+        ?.textContent ?? ``,
+      desc: document.querySelector(`#output p`)?.textContent ?? ``,
       content: output.value,
       markdown: editor.value?.getValue() ?? ``,
       accounts,

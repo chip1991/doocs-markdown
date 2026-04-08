@@ -1,0 +1,8 @@
+- [x] `wxt.config.ts` 配置完成，能够通过 WXT CLI 构建出 Chrome 插件。
+- [x] 能够成功展示左侧文章管理面板 `PostSlider`，实现文章切换、重命名与删除。
+- [x] 能够成功展示右侧高级设置面板 `RightSlider`，设置项可正常持久化至 Zustand。
+- [x] `StyleDropdown` 样式菜单完备，可成功更改字体、字号、全局主题色。
+- [x] 右键菜单“上传图片”、“插入表格”等功能弹窗已补全，触发并可正常使用。
+- [x] 能够通过二次确认 `AlertDialog` 进行“恢复默认样式”操作。
+- [x] 支持拖拽包含图片的 Markdown 文件夹，并能正确触发 `mdLocalToRemote()` 自动上传替换。
+- [x] 复制、生成 HTML 流程存在全屏遮罩 Loading，预览区右下角可回到顶部。

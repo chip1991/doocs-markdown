@@ -39,6 +39,10 @@ onMounted(() => {
 
 function formCustomSave() {
   const str = editor.value!.getValue()
+  if (!str.trim()) {
+    toast.error(`自定义代码不能为空`)
+    return
+  }
   localStorage.setItem(`formCustomConfig`, str)
   toast.success(`保存成功`)
 }
