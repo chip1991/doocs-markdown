@@ -1,4 +1,4 @@
-import { useAppStore, themeChanged, fontChanged, sizeChanged, colorChanged, codeBlockThemeChanged, legendChanged, macCodeBlockChanged, useIndentChanged } from '@/stores'
+import { useAppStore, useDisplayStore, useStore, themeChanged, fontChanged, sizeChanged, colorChanged, codeBlockThemeChanged, legendChanged, macCodeBlockChanged, useIndentChanged, citeStatusChanged } from '@/stores'
 import { themeOptions, fontFamilyOptions, fontSizeOptions, colorOptions, codeBlockThemeOptions, legendOptions } from '@/config'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
@@ -17,10 +17,14 @@ export function RightSlider() {
     isMacCodeBlock,
     isUseIndent,
     isEditOnLeft,
+    isCiteStatus,
     isOpenRightSlider,
     setIsOpenRightSlider,
     toggleEditOnLeft,
   } = useAppStore()
+
+  const { resetStyleConfirm } = useStore()
+  const { isShowCssEditor, toggleShowCssEditor } = useDisplayStore()
 
   if (!isOpenRightSlider) return null
 
@@ -143,6 +147,23 @@ export function RightSlider() {
         <div className="flex items-center justify-between">
           <Label>首行缩进</Label>
           <Switch checked={isUseIndent} onCheckedChange={useIndentChanged} />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <Label>微信外链转底部引用</Label>
+          <Switch checked={isCiteStatus} onCheckedChange={citeStatusChanged} />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <Label>自定义 CSS 面板</Label>
+          <Switch checked={isShowCssEditor} onCheckedChange={toggleShowCssEditor} />
+        </div>
+
+        <div className="pt-4 border-t space-y-3">
+          <Label className="block mb-2">样式配置</Label>
+          <Button variant="outline" className="w-full" onClick={resetStyleConfirm}>
+            重置
+          </Button>
         </div>
       </div>
     </div>
