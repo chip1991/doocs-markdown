@@ -156,7 +156,7 @@ export function PostSlider() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={(e) => {
+                <DropdownMenuItem onSelect={(e) => {
                   e.stopPropagation()
                   startRename(index)
                 }}>
@@ -164,7 +164,7 @@ export function PostSlider() {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   className="text-red-600 dark:text-red-400"
-                  onClick={(e) => {
+                  onSelect={(e) => {
                     e.stopPropagation()
                     setDeleteIndex(index)
                   }}

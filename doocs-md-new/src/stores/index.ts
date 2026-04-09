@@ -607,10 +607,10 @@ interface DisplayState {
   isShowInsertFormDialog: boolean
   isShowUploadImgDialog: boolean
   isShowAboutDialog: boolean
-  toggleShowCssEditor: () => void
-  toggleShowInsertFormDialog: () => void
-  toggleShowUploadImgDialog: () => void
-  toggleShowAboutDialog: () => void
+  toggleShowCssEditor: (show?: boolean) => void
+  toggleShowInsertFormDialog: (show?: boolean) => void
+  toggleShowUploadImgDialog: (show?: boolean) => void
+  toggleShowAboutDialog: (show?: boolean) => void
 }
 
 export const useDisplayStore = create<DisplayState>()((set) => ({
@@ -618,8 +618,8 @@ export const useDisplayStore = create<DisplayState>()((set) => ({
   isShowInsertFormDialog: false,
   isShowUploadImgDialog: false,
   isShowAboutDialog: false,
-  toggleShowCssEditor: () => set((state) => ({ isShowCssEditor: !state.isShowCssEditor })),
-  toggleShowInsertFormDialog: () => set((state) => ({ isShowInsertFormDialog: !state.isShowInsertFormDialog })),
-  toggleShowUploadImgDialog: () => set((state) => ({ isShowUploadImgDialog: !state.isShowUploadImgDialog })),
-  toggleShowAboutDialog: () => set((state) => ({ isShowAboutDialog: !state.isShowAboutDialog })),
+  toggleShowCssEditor: (show) => set((state) => ({ isShowCssEditor: show ?? !state.isShowCssEditor })),
+  toggleShowInsertFormDialog: (show) => set((state) => ({ isShowInsertFormDialog: show ?? !state.isShowInsertFormDialog })),
+  toggleShowUploadImgDialog: (show) => set((state) => ({ isShowUploadImgDialog: show ?? !state.isShowUploadImgDialog })),
+  toggleShowAboutDialog: (show) => set((state) => ({ isShowAboutDialog: show ?? !state.isShowAboutDialog })),
 }))

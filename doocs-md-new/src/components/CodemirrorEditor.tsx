@@ -171,7 +171,7 @@ export function CodemirrorEditor() {
       toast.error('上传图片未知异常')
       return
     }
-    toggleShowUploadImgDialog() // Pass false if it accepts a boolean
+    toggleShowUploadImgDialog(false)
     if (editor) {
       const cursor = editor.getCursor()
       const markdownImage = `![](${imageUrl})`
@@ -336,29 +336,29 @@ export function CodemirrorEditor() {
           />
         </ContextMenuTrigger>
         <ContextMenuContent className="w-64">
-          <ContextMenuItem inset onClick={() => toggleShowUploadImgDialog()}>
+          <ContextMenuItem inset onSelect={() => toggleShowUploadImgDialog()}>
             上传图片
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => toggleShowInsertFormDialog()}>
+          <ContextMenuItem inset onSelect={() => toggleShowInsertFormDialog()}>
             插入表格
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => resetStyleConfirm()}>
+          <ContextMenuItem inset onSelect={() => resetStyleConfirm()}>
             恢复默认样式
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => importDefaultContent()}>
+          <ContextMenuItem inset onSelect={() => importDefaultContent()}>
             导入默认文档
           </ContextMenuItem>
           <ContextMenuSeparator />
-          <ContextMenuItem inset onClick={() => importMarkdownContent()}>
+          <ContextMenuItem inset onSelect={() => importMarkdownContent()}>
             导入 .md 文档
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => exportEditorContent2MD()}>
+          <ContextMenuItem inset onSelect={() => exportEditorContent2MD()}>
             导出 .md 文档
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => exportEditorContent2HTML()}>
+          <ContextMenuItem inset onSelect={() => exportEditorContent2HTML()}>
             导出 .html
           </ContextMenuItem>
-          <ContextMenuItem inset onClick={() => formatContent()}>
+          <ContextMenuItem inset onSelect={() => formatContent()}>
             格式化
             <ContextMenuShortcut>
               {altSign} + {shiftSign} + F

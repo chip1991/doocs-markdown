@@ -130,9 +130,9 @@ export function InsertFormDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Button variant="outline" onClick={toggleShowInsertFormDialog}>
-            取消
-          </Button>
+     <Button type="button" variant="outline" onClick={() => toggleShowInsertFormDialog(false)}>
+                取消
+              </Button>
           <Button onClick={handleInsert}>
             确定
           </Button>

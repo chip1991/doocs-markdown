@@ -139,21 +139,21 @@ export function EditorHeader() {
           <MenubarMenu>
             <MenubarTrigger className="cursor-pointer">文件</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem onClick={importMarkdownContent}>导入 .md 文档</MenubarItem>
-              <MenubarItem onClick={importDefaultContent}>导入默认文档</MenubarItem>
+              <MenubarItem onSelect={importMarkdownContent}>导入 .md 文档</MenubarItem>
+              <MenubarItem onSelect={importDefaultContent}>导入默认文档</MenubarItem>
               <MenubarSeparator />
-              <MenubarItem onClick={exportEditorContent2MD}>导出 .md 文档</MenubarItem>
-              <MenubarItem onClick={exportEditorContent2HTML}>导出 .html</MenubarItem>
+              <MenubarItem onSelect={exportEditorContent2MD}>导出 .md 文档</MenubarItem>
+              <MenubarItem onSelect={exportEditorContent2HTML}>导出 .html</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
 
           <MenubarMenu>
             <MenubarTrigger className="cursor-pointer">编辑</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem onClick={() => toggleShowUploadImgDialog()}>自定义图床</MenubarItem>
-              <MenubarItem onClick={() => toggleShowInsertFormDialog()}>插入表格</MenubarItem>
-              <MenubarItem onClick={() => toggleShowCssEditor()}>自定义 CSS</MenubarItem>
-              <MenubarItem onClick={resetStyleConfirm}>恢复默认样式</MenubarItem>
+              <MenubarItem onSelect={() => toggleShowUploadImgDialog()}>自定义图床</MenubarItem>
+              <MenubarItem onSelect={() => toggleShowInsertFormDialog()}>插入表格</MenubarItem>
+              <MenubarItem onSelect={() => toggleShowCssEditor()}>自定义 CSS</MenubarItem>
+              <MenubarItem onSelect={resetStyleConfirm}>恢复默认样式</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
 
@@ -161,7 +161,7 @@ export function EditorHeader() {
             <MenubarTrigger className="cursor-pointer">格式</MenubarTrigger>
             <MenubarContent className="w-60" align="start">
               {formatItems.map(({ label, kbd, action }) => (
-                <MenubarItem key={label} onClick={action}>
+                <MenubarItem key={label} onSelect={action}>
                   {label}
                   <MenubarShortcut>
                     {kbd.map((item, idx) => (
@@ -198,7 +198,7 @@ export function EditorHeader() {
           <MenubarMenu>
             <MenubarTrigger className="cursor-pointer">帮助</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem onClick={() => toggleShowAboutDialog()}>关于</MenubarItem>
+              <MenubarItem onSelect={() => toggleShowAboutDialog()}>关于</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
