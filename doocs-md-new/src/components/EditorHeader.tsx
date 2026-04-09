@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { StyleDropdown } from '@/components/StyleDropdown'
 import {
   Menubar,
   MenubarContent,
@@ -8,7 +7,6 @@ import {
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger,
-  MenubarCheckboxItem,
 } from '@/components/ui/menubar'
 import { Button } from '@/components/ui/button'
 import {
@@ -36,10 +34,6 @@ export function EditorHeader() {
     setIsOpenPostSlider,
     isOpenRightSlider,
     setIsOpenRightSlider,
-    isCiteStatus,
-    toggleCiteStatus,
-    isCountStatus,
-    toggleCountStatus,
     primaryColor,
   } = useAppStore()
 
@@ -173,25 +167,9 @@ export function EditorHeader() {
                 </MenubarItem>
               ))}
               <MenubarSeparator />
-              <MenubarCheckboxItem
-                checked={isCiteStatus}
-                onCheckedChange={() => {
-                  toggleCiteStatus()
-                  editorRefresh()
-                }}
-              >
-                微信外链转底部引用
-              </MenubarCheckboxItem>
-              <MenubarSeparator />
-              <MenubarCheckboxItem
-                checked={isCountStatus}
-                onCheckedChange={() => {
-                  toggleCountStatus()
-                  editorRefresh()
-                }}
-              >
-                统计字数和阅读时间
-              </MenubarCheckboxItem>
+              <MenubarItem onSelect={() => setIsOpenRightSlider(true)}>
+                更多设置...
+              </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
 
@@ -202,8 +180,6 @@ export function EditorHeader() {
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
-
-        <StyleDropdown />
       </div>
 
       <div className="flex items-center space-x-2">

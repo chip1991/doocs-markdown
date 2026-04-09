@@ -1,4 +1,4 @@
-import { useAppStore, useDisplayStore, useStore, themeChanged, fontChanged, sizeChanged, colorChanged, codeBlockThemeChanged, legendChanged, macCodeBlockChanged, useIndentChanged, citeStatusChanged } from '@/stores'
+import { useAppStore, useDisplayStore, useStore, themeChanged, fontChanged, sizeChanged, colorChanged, codeBlockThemeChanged, legendChanged, macCodeBlockChanged, useIndentChanged, citeStatusChanged, countStatusChanged } from '@/stores'
 import { themeOptions, fontFamilyOptions, fontSizeOptions, colorOptions, codeBlockThemeOptions, legendOptions } from '@/config'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
@@ -18,6 +18,7 @@ export function RightSlider() {
     isUseIndent,
     isEditOnLeft,
     isCiteStatus,
+    isCountStatus,
     isOpenRightSlider,
     setIsOpenRightSlider,
     toggleEditOnLeft,
@@ -152,6 +153,11 @@ export function RightSlider() {
         <div className="flex items-center justify-between">
           <Label htmlFor="cite-status">微信外链转底部引用</Label>
           <Switch id="cite-status" checked={isCiteStatus} onCheckedChange={citeStatusChanged} />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <Label htmlFor="count-status">统计字数和阅读时间</Label>
+          <Switch id="count-status" checked={isCountStatus} onCheckedChange={countStatusChanged} />
         </div>
 
         <div className="flex items-center justify-between">
