@@ -109,6 +109,11 @@ export function CodemirrorEditor() {
       }, 300)
     })
 
+    // 触发首次渲染
+    setTimeout(() => {
+      editorRefresh()
+    }, 100)
+
     return () => {
       cm.toTextArea()
       setEditor(null)
