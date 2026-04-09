@@ -28,7 +28,7 @@ function App() {
   }, [isDark])
 
   return (
-    <div className="h-screen flex flex-col bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-100 overflow-hidden">
+    <div className="h-full flex flex-col bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-100 overflow-hidden">
       <EditorHeader />
 
       <main className="container-main flex flex-1 flex-col overflow-hidden relative">
