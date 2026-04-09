@@ -222,7 +222,7 @@ export function EditorHeader() {
 
         <PostInfo />
 
-        <Button variant="outline" size="icon" onClick={toggleDark}>
+        <Button variant="outline" size="icon" onClick={() => toggleDark()}>
           {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
         </Button>
 

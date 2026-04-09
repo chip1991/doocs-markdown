@@ -116,12 +116,12 @@ interface AppState {
   formCustomConfig: string
 
   // Persisted state setters
-  toggleDark: () => void
-  toggleMacCodeBlock: () => void
-  toggleEditOnLeft: () => void
-  toggleCiteStatus: () => void
-  toggleCountStatus: () => void
-  toggleUseIndent: () => void
+  toggleDark: (isDark?: boolean) => void
+  toggleMacCodeBlock: (isMacCodeBlock?: boolean) => void
+  toggleEditOnLeft: (isEditOnLeft?: boolean) => void
+  toggleCiteStatus: (isCiteStatus?: boolean) => void
+  toggleCountStatus: (isCountStatus?: boolean) => void
+  toggleUseIndent: (isUseIndent?: boolean) => void
   setTheme: (theme: keyof typeof themeMap) => void
   setFontFamily: (fontFamily: string) => void
   setFontSize: (fontSize: string) => void
@@ -207,12 +207,12 @@ util.axios.post('${typeof window !== "undefined" ? window.location.origin : ""}/
 })
       `.trim(),
 
-      toggleDark: () => set((state) => ({ isDark: !state.isDark })),
-      toggleMacCodeBlock: () => set((state) => ({ isMacCodeBlock: !state.isMacCodeBlock })),
-      toggleEditOnLeft: () => set((state) => ({ isEditOnLeft: !state.isEditOnLeft })),
-      toggleCiteStatus: () => set((state) => ({ isCiteStatus: !state.isCiteStatus })),
-      toggleCountStatus: () => set((state) => ({ isCountStatus: !state.isCountStatus })),
-      toggleUseIndent: () => set((state) => ({ isUseIndent: !state.isUseIndent })),
+      toggleDark: (isDark) => set((state) => ({ isDark: isDark ?? !state.isDark })),
+      toggleMacCodeBlock: (isMacCodeBlock) => set((state) => ({ isMacCodeBlock: isMacCodeBlock ?? !state.isMacCodeBlock })),
+      toggleEditOnLeft: (isEditOnLeft) => set((state) => ({ isEditOnLeft: isEditOnLeft ?? !state.isEditOnLeft })),
+      toggleCiteStatus: (isCiteStatus) => set((state) => ({ isCiteStatus: isCiteStatus ?? !state.isCiteStatus })),
+      toggleCountStatus: (isCountStatus) => set((state) => ({ isCountStatus: isCountStatus ?? !state.isCountStatus })),
+      toggleUseIndent: (isUseIndent) => set((state) => ({ isUseIndent: isUseIndent ?? !state.isUseIndent })),
       setTheme: (theme) => set({ theme }),
       setFontFamily: (fontFamily) => set({ fontFamily }),
       setFontSize: (fontSize) => set({ fontSize }),
@@ -581,23 +581,23 @@ export const legendChanged = (newVal: string) => {
   useStore.getState().editorRefresh()
 }
 
-export const macCodeBlockChanged = () => {
-  useAppStore.getState().toggleMacCodeBlock()
+export const macCodeBlockChanged = (val: boolean) => {
+  useAppStore.getState().toggleMacCodeBlock(val)
   useStore.getState().editorRefresh()
 }
 
-export const citeStatusChanged = () => {
-  useAppStore.getState().toggleCiteStatus()
+export const citeStatusChanged = (val: boolean) => {
+  useAppStore.getState().toggleCiteStatus(val)
   useStore.getState().editorRefresh()
 }
 
-export const countStatusChanged = () => {
-  useAppStore.getState().toggleCountStatus()
+export const countStatusChanged = (val: boolean) => {
+  useAppStore.getState().toggleCountStatus(val)
   useStore.getState().editorRefresh()
 }
 
-export const useIndentChanged = () => {
-  useAppStore.getState().toggleUseIndent()
+export const useIndentChanged = (val: boolean) => {
+  useAppStore.getState().toggleUseIndent(val)
   useStore.getState().editorRefresh()
 }
 

@@ -135,28 +135,28 @@ export function RightSlider() {
         </div>
 
         <div className="flex items-center justify-between">
-          <Label>编辑器靠左</Label>
-          <Switch checked={isEditOnLeft} onCheckedChange={toggleEditOnLeft} />
+          <Label htmlFor="edit-on-left">编辑器靠左</Label>
+          <Switch id="edit-on-left" checked={isEditOnLeft} onCheckedChange={toggleEditOnLeft} />
         </div>
 
         <div className="flex items-center justify-between">
-          <Label>Mac 代码块</Label>
-          <Switch checked={isMacCodeBlock} onCheckedChange={macCodeBlockChanged} />
+          <Label htmlFor="mac-code-block">Mac 代码块</Label>
+          <Switch id="mac-code-block" checked={isMacCodeBlock} onCheckedChange={macCodeBlockChanged} />
         </div>
 
         <div className="flex items-center justify-between">
-          <Label>首行缩进</Label>
-          <Switch checked={isUseIndent} onCheckedChange={useIndentChanged} />
+          <Label htmlFor="use-indent">首行缩进</Label>
+          <Switch id="use-indent" checked={isUseIndent} onCheckedChange={useIndentChanged} />
         </div>
 
         <div className="flex items-center justify-between">
-          <Label>微信外链转底部引用</Label>
-          <Switch checked={isCiteStatus} onCheckedChange={citeStatusChanged} />
+          <Label htmlFor="cite-status">微信外链转底部引用</Label>
+          <Switch id="cite-status" checked={isCiteStatus} onCheckedChange={citeStatusChanged} />
         </div>
 
         <div className="flex items-center justify-between">
-          <Label>自定义 CSS 面板</Label>
-          <Switch checked={isShowCssEditor} onCheckedChange={toggleShowCssEditor} />
+          <Label htmlFor="css-editor">自定义 CSS 面板</Label>
+          <Switch id="css-editor" checked={isShowCssEditor} onCheckedChange={toggleShowCssEditor} />
         </div>
 
         <div className="pt-4 border-t space-y-3">
