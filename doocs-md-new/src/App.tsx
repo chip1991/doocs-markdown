@@ -28,11 +28,11 @@ function App() {
   }, [isDark])
 
   return (
-    <div className="h-full flex flex-col bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-100 overflow-hidden">
+    <div className="h-screen flex flex-col bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-100 overflow-hidden">
       <EditorHeader />
 
-      <main className="container-main flex flex-1 flex-col overflow-hidden relative">
-        <div className="container-main-section border-radius-10 relative flex flex-1 overflow-hidden border">
+      <main className="flex flex-1 flex-col overflow-hidden relative">
+        <div className="relative flex flex-1 overflow-hidden border rounded-xl m-2">
           <PostSlider />
 
           {/* Editor and Preview Area container */}
