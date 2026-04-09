@@ -31,18 +31,20 @@ function App() {
     <div className="h-screen flex flex-col bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-100 overflow-hidden">
       <EditorHeader />
 
-      <main className="flex-1 flex overflow-hidden relative">
-        <PostSlider />
+      <main className="container-main flex flex-1 flex-col overflow-hidden relative">
+        <div className="container-main-section border-radius-10 relative flex flex-1 overflow-hidden border">
+          <PostSlider />
 
-        {/* Editor and Preview Area container */}
-        <div className="flex flex-1 overflow-hidden">
-          <CodemirrorEditor />
-          <PreviewArea />
+          {/* Editor and Preview Area container */}
+          <div className="flex flex-1 overflow-hidden">
+            <CodemirrorEditor />
+            <PreviewArea />
+          </div>
+
+          <RightSlider />
+          {/* CSS Editor (shown conditionally inside component) */}
+          <CssEditor />
         </div>
-
-        <RightSlider />
-        {/* CSS Editor (shown conditionally inside component) */}
-        <CssEditor />
       </main>
 
       <Footer />

@@ -16,8 +16,7 @@ export function PreviewArea() {
     <div
       id="preview"
       ref={previewRef}
-      className="preview-wrapper flex-1 p-5 overflow-y-auto"
-      style={{ height: '100%' }}
+      className="preview-wrapper flex-1 overflow-y-auto"
     >
       <div id="output-wrapper">
         <div className="preview border-x shadow-xl">

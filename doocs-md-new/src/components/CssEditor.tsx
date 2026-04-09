@@ -174,7 +174,9 @@ export function CssEditor() {
   if (!isShowCssEditor) return null
 
   return (
-    <div className="cssEditor-wrapper h-full flex flex-col border-l-2 border-gray-200 dark:border-gray-800 w-1/2 max-w-md animate-in slide-in-from-right duration-300">
+    <div
+      className="order-2 flex flex-col flex-1 h-full bg-white dark:bg-[#1e1e1e] border-l transition-all duration-300 ease-in-out"
+    >
       <Tabs value={cssContentConfig.active} onValueChange={handleTabChange} className="w-full flex-none">
         <TabsList className="w-full flex justify-start overflow-x-auto rounded-none border-b h-12 px-2 bg-transparent">
           {cssContentConfig.tabs.map(item => (

@@ -321,10 +321,7 @@ export function CodemirrorEditor() {
   return (
     <div
       ref={wrapperRef}
-      className={`codeMirror-wrapper flex-1 ${
-        !isEditOnLeft ? 'order-1 border-l' : 'border-r'
-      }`}
-      style={{ overflowX: 'auto', height: '100%' }}
+      className={`codeMirror-wrapper flex-1 overflow-x-auto h-full ${!isEditOnLeft ? 'order-1 border-l' : 'border-r'}`}
     >
       <ContextMenu>
         <ContextMenuTrigger className="block h-full min-h-full">
